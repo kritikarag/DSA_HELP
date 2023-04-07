@@ -2,23 +2,23 @@
 using namespace std;
 
 int main(){
-    int high, low;
+    long high, low;
     cin>>low>>high;
-    vector<int>ans;
-
-    for(int i=low;i<=high;i++){
-        int n =i;
-        while(n%3==0){
-            n/=3;
+    vector<long>store1,store2,ans;
+    long three = 1, five =1, res=0;
+    while(three<=high){
+        long five = 1;
+        while(five<=high){
+            int curr = three*five;
+            if (curr >= low && curr <= high)
+            {
+                cout<<curr<<" ";
+                res++;
+            }
+            five*=5;
         }
-        while(n%5==0){
-            n/=5;
-        }
-        if(n==1)ans.push_back(i);
-    }
-    for(int i:ans){
-        cout<<i<<" ";
-    }
-    cout<<endl;
+        three*=3;
+    } 
+    //cout<<endl;
     return 0;
 }
