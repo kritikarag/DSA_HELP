@@ -6,7 +6,7 @@ bool winnerOfGame(string colors)
     long long cntA = 0, cntB = 0, alice = 0, bob = 0;
     for (char c : colors)
     {
-        if (c == 'A')
+        if (c == 'W')
         {
             cntA++;
             if (cntA >= 3)
