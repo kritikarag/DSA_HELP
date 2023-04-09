@@ -21,3 +21,30 @@ int main()
     }
     return ans;
 }
+
+
+priority_queue<int,vector<int>,greater<int>>pq;
+
+for(int i:num){
+    pq.push(i);
+}
+
+int res = 0;
+while(pq.size()>1){
+    int x = pq.top();
+    pq.pop();
+    int y = pq.top();
+    pq.pop();
+
+    res += x+y;
+    pq.push(x+y);
+}
+
+res+=pq.top();
+
+return res;
+
+
+
+6 1 2 3 3 4 5 3     2
+4 1 2 3 4 4         1 2

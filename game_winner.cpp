@@ -3,14 +3,14 @@ using namespace std;
 
 bool winnerOfGame(string colors)
 {
-    long long cntA = 0, cntB = 0, alice = 0, bob = 0;
+    long long cntA = 0, cntB = 0, wendy = 0, bob = 0;
     for (char c : colors)
     {
         if (c == 'W')
         {
             cntA++;
             if (cntA >= 3)
-                alice += cntA - 2;
+                wendy += cntA - 2;
             cntB = 0;
         }
         else
@@ -21,7 +21,8 @@ bool winnerOfGame(string colors)
             cntA = 0;
         }
     }
-    return alice > bob;
+    if (wendy > bob)return "Wendy";
+    else return "Bob";
 }
 
 int main(){

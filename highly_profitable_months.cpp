@@ -4,17 +4,18 @@ using namespace std;
 int main(){
     int n;
     cin>>n;
-    vector<int>arr(n);
+    vector<int>stockPrices(n);
     for(int i=0;i<n;i++){
-        cin>>arr[i];
+        cin>>stockPrices[i];
     }
 
-    int k,j=0,count=0,ans=0;
+    int k;
     cin>>k;
 
-    while (j < arr.size())
+    int j = 1, count = 0, ans = 0;
+    while (j < stockPrices.size())
     {
-        if (arr[j] > arr[j - 1])
+        if (stockPrices[j] > stockPrices[j - 1])
         {
             count++;
         }
@@ -23,14 +24,16 @@ int main(){
             if (count + 1 >= k)
             {
                 ans += count - k + 2;
-                count = 0;
             }
+
+            count = 0;
         }
         j++;
     }
-    if (count + 1 >= k)
-        ans += count - k + 2;
+    if (count + 1 >= k)ans += count - k + 2;
     
+    return ans;
+
     cout<< ans <<endl;
 
     return 0;
