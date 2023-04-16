@@ -11,8 +11,10 @@ int main()
         vector<int> a(26, 0), b(26, 0);
         for (auto x : s[i])
             a[x - 'a']++;
+
         for (auto x : t[i])
             b[x - 'a']++;
+            
         for (int j = 0; j < 26; j++)
         {
             if (abs(a[j] - b[j]) > 3)
